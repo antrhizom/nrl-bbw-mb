@@ -1,56 +1,62 @@
 "use client";
-
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
-import MerksatzCard from "@/components/MerksatzCard";
-import TrueFalseCards from "@/components/interactive/TrueFalseCards";
+import FlipCard from "@/components/FlipCard";
+import InfoTerm from "@/components/InfoTerm";
+import GlossaryCards from "@/components/GlossaryCards";
+import { GLOSSARY } from "@/lib/glossary";
 
 export default function AllgemeinSection() {
-  const { markInteractiveComplete, markQuizPassed } = useMerkblatt();
+  const { markComplete } = useMerkblatt();
+  const sectionId = "allgemein";
+
+  const flipCards = [
+    {
+      title: "Zweck der NRL",
+      description:
+        "Die NRL regelt den sicheren und verantwortungsvollen Umgang mit den IKT-Systemen der BBW und stützt sich auf kantonale und eidgenössische Rechtsgrundlagen.",
+    },
+    {
+      title: "Geltungsbereich",
+      description:
+        "Die NRL gilt für alle Nutzenden der BBW-IKT-Systeme – Lernende, Lehrpersonen, Schulleitung, Verwaltung und Gäste.",
+    },
+    {
+      title: "Auswertung von Logdaten",
+      description:
+        "Logdaten (z.B. Firewall, Server) werden gesammelt und regelmässig in anonymisierter Form ausgewertet. Bei konkretem Verdacht auf Missbrauch können personenbezogene Auswertungen erfolgen.",
+    },
+  ];
+
+  const glossaryTerms = ["IKT-Systeme", "Logdaten"];
 
   return (
-    <SectionCard chapterLabel="Kapitel 1" title="Allgemein & IT-Nutzung">
-      <div className="space-y-4">
-        <MerksatzCard>
-          Die NRL gilt für alle Nutzenden der BBW-IKT-Systeme – Lernende, Lehrpersonen,
-          Schulleitung, Verwaltung und Gäste.
-        </MerksatzCard>
+    <SectionCard chapterLabel="Kapitel 1" title="Allgemeine Bestimmungen">
+      <p className="text-gray-700 leading-relaxed">
+        Die Nutzungsrichtlinie IKT (NRL) regelt den Umgang mit den{" "}
+        <InfoTerm>IKT-Systemen</InfoTerm> der BBW.{" "}
+        <InfoTerm>Logdaten</InfoTerm> werden regelmässig ausgewertet.
+      </p>
 
-        <MerksatzCard>
-          Private Nutzung der Schulsysteme ist erlaubt, aber schulische Zwecke haben immer Vorrang.
-          Kryptowährungs-Mining und kommerzielle Nutzung sind verboten.
-        </MerksatzCard>
-
-        <MerksatzCard>
-          BYOD-Geräte (Bring Your Own Device) brauchen Passwort-/PIN-Schutz und regelmässige
-          Software-Updates. E-Mail und Kalender können über den Browser genutzt werden –
-          eine Synchronisation ist nicht erforderlich.
-        </MerksatzCard>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {flipCards.map((card, index) => (
+          <FlipCard
+            key={index}
+            title={card.title}
+            description={card.description}
+            index={index}
+            total={flipCards.length}
+            sectionId={sectionId}
+            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+          />
+        ))}
       </div>
 
-      <TrueFalseCards
-        title="Richtig oder Falsch?"
-        statements={[
-          {
-            statement: "Die NRL gilt nur für Lehrpersonen.",
-            isTrue: false,
-            explanation: "Sie gilt für alle Nutzenden: Lernende, Lehrpersonen, Schulleitung, Verwaltung und Gäste.",
-          },
-          {
-            statement: "Private Nutzung der Schulsysteme ist grundsätzlich erlaubt.",
-            isTrue: true,
-            explanation: "Private Nutzung ist erlaubt, sofern schulische Zwecke Vorrang haben.",
-          },
-          {
-            statement: "BYOD-Geräte müssen E-Mails und Kalender synchronisieren.",
-            isTrue: false,
-            explanation: "Eine Synchronisation ist nicht erforderlich – der Zugang über den Browser reicht aus.",
-          },
-        ]}
-        onComplete={() => {
-          markInteractiveComplete("allgemein");
-          markQuizPassed("allgemein");
-        }}
+      <GlossaryCards
+        terms={glossaryTerms}
+        glossary={GLOSSARY}
+        sectionId={sectionId}
+        onAllLearned={() => markComplete(sectionId, "glossary")}
       />
     </SectionCard>
   );

@@ -5,19 +5,31 @@ import ProgressBar from "@/components/ProgressBar";
 import SectionNav from "@/components/SectionNav";
 import WelcomeSection from "@/components/sections/WelcomeSection";
 import AllgemeinSection from "@/components/sections/AllgemeinSection";
-import DatensicherheitSection from "@/components/sections/DatensicherheitSection";
-import KommunikationSection from "@/components/sections/KommunikationSection";
-import DatenschutzSection from "@/components/sections/DatenschutzSection";
-import UrheberrechtSection from "@/components/sections/UrheberrechtSection";
+import NutzungITSection from "@/components/sections/NutzungITSection";
+import Datensicherheit1Section from "@/components/sections/Datensicherheit1Section";
+import Datensicherheit2Section from "@/components/sections/Datensicherheit2Section";
+import Datensicherheit3Section from "@/components/sections/Datensicherheit3Section";
+import Datenschutz1Section from "@/components/sections/Datenschutz1Section";
+import Datenschutz2Section from "@/components/sections/Datenschutz2Section";
+import Datenschutz3Section from "@/components/sections/Datenschutz3Section";
+import Urheberrecht1Section from "@/components/sections/Urheberrecht1Section";
+import Urheberrecht2Section from "@/components/sections/Urheberrecht2Section";
+import VerstoesseSection from "@/components/sections/VerstoesseSection";
 import CompletionSection from "@/components/sections/CompletionSection";
 
 const SECTIONS = [
   WelcomeSection,
   AllgemeinSection,
-  DatensicherheitSection,
-  KommunikationSection,
-  DatenschutzSection,
-  UrheberrechtSection,
+  NutzungITSection,
+  Datensicherheit1Section,
+  Datensicherheit2Section,
+  Datensicherheit3Section,
+  Datenschutz1Section,
+  Datenschutz2Section,
+  Datenschutz3Section,
+  Urheberrecht1Section,
+  Urheberrecht2Section,
+  VerstoesseSection,
   CompletionSection,
 ];
 

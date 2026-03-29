@@ -5,10 +5,16 @@ import { useMerkblatt, SECTION_IDS } from "@/context/MerkblattContext";
 const SECTION_LABELS: Record<string, string> = {
   welcome: "Start",
   allgemein: "Allgemein",
-  datensicherheit: "Sicherheit",
-  kommunikation: "Kommunikation",
-  datenschutz: "Datenschutz",
-  urheberrecht: "Urheberrecht",
+  "nutzung-it": "IT-Nutzung",
+  "datensicherheit-1": "Sicherheit I",
+  "datensicherheit-2": "Sicherheit II",
+  "datensicherheit-3": "Sicherheit III",
+  "datenschutz-1": "Datenschutz I",
+  "datenschutz-2": "Datenschutz II",
+  "datenschutz-3": "Datenschutz III",
+  "urheberrecht-1": "Urheber I",
+  "urheberrecht-2": "Urheber II",
+  verstoesse: "Verstösse",
   abschluss: "Zertifikat",
 };
 
@@ -19,9 +25,7 @@ export default function ProgressBar() {
     <div className="w-full mb-8">
       <div className="flex justify-between items-center mb-2">
         <span className="text-sm text-gray-600">Fortschritt</span>
-        <span className="text-sm font-semibold text-bbw-green-700">
-          {progress}%
-        </span>
+        <span className="text-sm font-semibold text-bbw-green-700">{progress}%</span>
       </div>
       <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-3">
         <div
@@ -29,7 +33,7 @@ export default function ProgressBar() {
           style={{ width: `${progress}%` }}
         />
       </div>
-      <div className="flex gap-1">
+      <div className="flex gap-0.5">
         {SECTION_IDS.map((id, i) => (
           <div
             key={id}

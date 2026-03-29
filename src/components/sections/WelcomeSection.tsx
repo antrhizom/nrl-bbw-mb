@@ -1,26 +1,22 @@
 "use client";
-
 import SectionCard from "@/components/SectionCard";
 
 export default function WelcomeSection() {
   return (
     <SectionCard chapterLabel="Willkommen" title="Merkblatt zur Nutzungsrichtlinie IKT">
       <p className="text-lg text-gray-600 font-medium">BBW Berufsbildungsschule Winterthur</p>
-
       <p className="text-gray-700 leading-relaxed">
         Dieses Merkblatt fasst die wichtigsten Punkte der Nutzungsrichtlinie IKT (NRL) zusammen.
-        Du wirst Schritt für Schritt durch die zentralen Merksätze geführt und kannst dein Wissen
-        mit kurzen Quizfragen überprüfen.
+        Du wirst Schritt für Schritt durch die zentralen Merksätze geführt. Klicke auf die Karten,
+        um die Erklärungen zu lesen, und lerne die wichtigsten Fachbegriffe kennen.
       </p>
-
       <div className="bg-bbw-green-50 border border-bbw-green-200 rounded-xl p-5">
         <p className="text-gray-800 leading-relaxed">
           <span className="font-semibold text-bbw-green-700">Hinweis:</span>{" "}
-          Die Nutzungsrichtlinie muss zur Kenntnis genommen werden. Sie gilt für alle Nutzenden
-          der BBW-IKT-Systeme: Lernende, Lehrpersonen, Schulleitung, Verwaltung und Gäste.
+          Diese Nutzungsrichtlinie ist nicht als Vertrag zu verstehen. Sie muss lediglich zur Kenntnis
+          genommen werden. Sie gilt für alle Nutzenden der BBW-IKT-Systeme.
         </p>
       </div>
-
       <a
         href="/251126_Nutzungsrichtlinie_IKT_BBW.pdf"
         target="_blank"
