@@ -7,8 +7,8 @@ export default function WelcomeSection() {
       <p className="text-lg text-gray-600 font-medium">BBW Berufsbildungsschule Winterthur</p>
       <p className="text-gray-700 leading-relaxed">
         Dieses Merkblatt fasst die wichtigsten Punkte der Nutzungsrichtlinie IKT (NRL) zusammen.
-        Du wirst Schritt für Schritt durch die zentralen Merksätze geführt. Klicke auf die Karten,
-        um die Erklärungen zu lesen, und lerne die wichtigsten Fachbegriffe kennen.
+        Sie werden Schritt für Schritt durch die zentralen Merksätze geführt. Klicken Sie auf die
+        Karten, um die Erklärungen zu lesen, und lernen Sie die wichtigsten Fachbegriffe kennen.
       </p>
       <div className="bg-bbw-green-50 border border-bbw-green-200 rounded-xl p-5">
         <p className="text-gray-800 leading-relaxed">
