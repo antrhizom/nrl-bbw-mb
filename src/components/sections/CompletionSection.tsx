@@ -9,12 +9,13 @@ const ALL_SECTIONS = [
   { key: "datensicherheit-1", label: "Kap. 3 – Datensicherheit: Grundlagen" },
   { key: "datensicherheit-2", label: "Kap. 4 – Datensicherheit: Speicherung & Schutz" },
   { key: "datensicherheit-3", label: "Kap. 5 – Kommunikation & Netzwerk" },
-  { key: "datenschutz-1", label: "Kap. 6 – Datenschutz: Grundlagen" },
-  { key: "datenschutz-2", label: "Kap. 7 – Datenschutz: Im Unterricht" },
-  { key: "datenschutz-3", label: "Kap. 8 – KI & Lerntechnologien" },
-  { key: "urheberrecht-1", label: "Kap. 9 – Urheberrecht: Grundlagen" },
-  { key: "urheberrecht-2", label: "Kap. 10 – Urheberrecht: Neukreationen & KI" },
-  { key: "verstoesse", label: "Kap. 11 – Verstösse & Rechtliches" },
+  { key: "datensicherheit-4", label: "Kap. 6 – Dokumentenklassifizierung & Schutzstufen" },
+  { key: "datenschutz-1", label: "Kap. 7 – Datenschutz: Grundlagen" },
+  { key: "datenschutz-2", label: "Kap. 8 – Datenschutz: Im Unterricht" },
+  { key: "datenschutz-3", label: "Kap. 9 – KI & Lerntechnologien" },
+  { key: "urheberrecht-1", label: "Kap. 10 – Urheberrecht: Grundlagen" },
+  { key: "urheberrecht-2", label: "Kap. 11 – Urheberrecht: Neukreationen & KI" },
+  { key: "verstoesse", label: "Kap. 12 – Verstösse & Rechtliches" },
 ];
 
 export default function CompletionSection() {

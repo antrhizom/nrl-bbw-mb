@@ -3,7 +3,6 @@ import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
 import InfoTerm from "@/components/InfoTerm";
-import RoleHint from "@/components/RoleHint";
 
 export default function Datensicherheit2Section() {
   const { markSectionComplete } = useMerkblatt();
@@ -12,7 +11,7 @@ export default function Datensicherheit2Section() {
   const flipCards = [
     { title: "Offizielle Speicher & Ausnahmen", description: "Schulinterne Daten gehören auf BBW-Speicher. Ausnahmen sind abhängig von berufsgruppenspezifischen oder abteilungsspezifischen Bedürfnissen." },
     { title: "Meldepflicht", description: "Unbefugte Zugangsmöglichkeiten müssen sofort gemeldet werden." },
-    { title: "Drei Schutzstufen", description: "Sachdaten (z.B. Stundenpläne, Lehrmittel-Listen), Personendaten (z.B. Name, E-Mail, Noten), besondere Personendaten (z.B. Gesundheitsdaten, Disziplinarmassnahmen). Schulinterne Daten unterliegen dem Amtsgeheimnis." },
+    { title: "Schutzstufen beachten", description: "Daten werden in drei Schutzstufen eingeteilt: Sachdaten, Personendaten und besondere Personendaten. Details dazu auf der nächsten Seite." },
     { title: "Clean-Desk / Clear-Screen", description: "Bildschirm sperren (Win+L), keine vertraulichen Unterlagen offen liegen lassen." },
   ];
 
@@ -27,12 +26,6 @@ export default function Datensicherheit2Section() {
           <FlipCard key={index} title={card.title} description={card.description} index={index} total={flipCards.length} sectionId={sectionId} onAllFlipped={() => markSectionComplete(sectionId)} />
         ))}
       </div>
-      <RoleHint role="lehrpersonen">
-        Die korrekte Klassifizierung von Daten liegt in Ihrer Verantwortung.
-      </RoleHint>
-      <RoleHint role="mitarbeitende">
-        Achten Sie besonders auf die korrekte Einstufung von Personendaten in Ihrem Arbeitsbereich.
-      </RoleHint>
     </SectionCard>
   );
 }

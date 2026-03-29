@@ -15,12 +15,12 @@ export default function Urheberrecht2Section() {
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 10" title="Urheberrecht – Neukreationen & KI">
+    <SectionCard chapterLabel="Kapitel 11" title="Urheberrecht – Neukreationen & KI">
       <p className="text-gray-700 leading-relaxed">
         Bei Neukreationen und KI-generierten Inhalten gelten besondere Regeln.
       </p>
       <RoleHint role="lernende">
-        Wenn Sie KI-generierte Inhalte oder fremde Werke in Ihre Projekte einbauen, sind Sie für Rechtsverletzungen verantwortlich.
+        Auch bei Schularbeiten können Sie das Urheberrecht verletzen – z.B. wenn Sie fremde Texte, Bilder oder KI-generierte Inhalte ohne Prüfung verwenden. Sie tragen die Verantwortung.
       </RoleHint>
       <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (

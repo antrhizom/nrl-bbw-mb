@@ -18,7 +18,7 @@ export default function Datenschutz2Section() {
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 7" title="Datenschutz – Im Unterricht">
+    <SectionCard chapterLabel="Kapitel 8" title="Datenschutz – Im Unterricht">
       <p className="text-gray-700 leading-relaxed">
         Im Unterricht gelten besondere Datenschutzregeln. Unterscheiden Sie zwischen{" "}
         <InfoTerm>Lernprofil</InfoTerm> und{" "}

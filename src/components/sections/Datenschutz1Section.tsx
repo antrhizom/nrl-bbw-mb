@@ -16,7 +16,7 @@ export default function Datenschutz1Section() {
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 6" title="Datenschutz – Grundlagen">
+    <SectionCard chapterLabel="Kapitel 7" title="Datenschutz – Grundlagen">
       <p className="text-gray-700 leading-relaxed">
         <InfoTerm>Datenschutz</InfoTerm> schützt Personen vor missbräuchlicher
         Datenverwendung. Zentrale Prinzipien sind{" "}

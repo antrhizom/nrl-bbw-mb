@@ -9,6 +9,7 @@ import NutzungITSection from "@/components/sections/NutzungITSection";
 import Datensicherheit1Section from "@/components/sections/Datensicherheit1Section";
 import Datensicherheit2Section from "@/components/sections/Datensicherheit2Section";
 import Datensicherheit3Section from "@/components/sections/Datensicherheit3Section";
+import Datensicherheit4Section from "@/components/sections/Datensicherheit4Section";
 import Datenschutz1Section from "@/components/sections/Datenschutz1Section";
 import Datenschutz2Section from "@/components/sections/Datenschutz2Section";
 import Datenschutz3Section from "@/components/sections/Datenschutz3Section";
@@ -24,6 +25,7 @@ const SECTIONS = [
   Datensicherheit1Section,
   Datensicherheit2Section,
   Datensicherheit3Section,
+  Datensicherheit4Section,
   Datenschutz1Section,
   Datenschutz2Section,
   Datenschutz3Section,

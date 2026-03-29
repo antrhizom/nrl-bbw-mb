@@ -16,7 +16,7 @@ export default function Datenschutz3Section() {
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 8" title="Datenschutz – KI & Lerntechnologien">
+    <SectionCard chapterLabel="Kapitel 9" title="Datenschutz – KI & Lerntechnologien">
       <p className="text-gray-700 leading-relaxed">
         Generative KI-Tools und Lerntechnologien erfordern verantwortungsvollen Umgang mit Daten.
       </p>
@@ -25,6 +25,9 @@ export default function Datenschutz3Section() {
       </RoleHint>
       <RoleHint role="lernende">
         Sie müssen sich nicht bei KI-Tools registrieren. Bei regulären Schulangeboten mit Schul-Login gilt diese Regel nicht.
+      </RoleHint>
+      <RoleHint role="mitarbeitende">
+        Geben Sie keine Schuldaten in KI-Tools ein – auch nicht in anonymisierter Form, sofern ein Rückschluss auf Personen möglich wäre.
       </RoleHint>
       <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (

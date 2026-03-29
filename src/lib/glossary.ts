@@ -36,4 +36,8 @@ export const GLOSSARY: Record<string, string> = {
     "Schutz von Personen vor missbräuchlicher Verwendung ihrer personenbezogenen Daten.",
   Datensicherheit:
     "Technische und organisatorische Massnahmen zum Schutz aller Daten vor Verlust, Zerstörung oder unbefugtem Zugriff.",
+  Mining:
+    "Kryptowährungs-Mining – rechenintensive Erzeugung digitaler Währungen (z.B. Bitcoin). Belastet Geräte und Netzwerk stark und ist an der BBW verboten.",
+  Malware:
+    "Schadsoftware wie Viren, Trojaner oder Ransomware, die Daten beschädigen, stehlen oder Systeme lahmlegen kann.",
 };

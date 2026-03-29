@@ -18,18 +18,15 @@ export default function Urheberrecht1Section() {
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 9" title="Urheberrecht – Grundlagen">
+    <SectionCard chapterLabel="Kapitel 10" title="Urheberrecht – Grundlagen">
       <p className="text-gray-700 leading-relaxed">
         Das <InfoTerm>Urheberrecht</InfoTerm> schützt geistige Schöpfungen.
         Im Schulkontext betrifft das nicht nur Lehrmaterialien, sondern auch die Werke
         der Lernenden selbst: Durch moderne Medienanwendungen werden Lernende zu
         Autorinnen und Autoren.
       </p>
-      <RoleHint role="lernende">
-        Ihre Schulprojekte, Videos, Podcasts und Präsentationen sind urheberrechtlich geschützt – auch die Ihrer Mitschülerinnen und Mitschüler.
-      </RoleHint>
       <RoleHint role="lehrpersonen">
-        Sensibilisieren Sie Lernende dafür, dass ihre medialen Arbeiten urheberrechtlich geschützte Werke sind.
+        Auch Werke der Lernenden sind urheberrechtlich geschützt. Sensibilisieren Sie Lernende dafür, dass ihre medialen Arbeiten geschützte Werke sind. Die erweiterten Nutzungsrechte gemäss GT7 gelten nur innerhalb der eigenen Klasse.
       </RoleHint>
       <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (

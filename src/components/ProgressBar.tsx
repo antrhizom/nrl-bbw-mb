@@ -9,6 +9,7 @@ const SECTION_LABELS: Record<string, string> = {
   "datensicherheit-1": "Sicherheit I",
   "datensicherheit-2": "Sicherheit II",
   "datensicherheit-3": "Sicherheit III",
+  "datensicherheit-4": "Klassifizierung",
   "datenschutz-1": "Datenschutz I",
   "datenschutz-2": "Datenschutz II",
   "datenschutz-3": "Datenschutz III",

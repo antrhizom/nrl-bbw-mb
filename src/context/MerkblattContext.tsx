@@ -9,6 +9,7 @@ export const SECTION_IDS = [
   "datensicherheit-1",
   "datensicherheit-2",
   "datensicherheit-3",
+  "datensicherheit-4",
   "datenschutz-1",
   "datenschutz-2",
   "datenschutz-3",

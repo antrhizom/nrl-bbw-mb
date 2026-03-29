@@ -16,7 +16,7 @@ export default function VerstoesseSection() {
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 11" title="Verstösse & Konsequenzen">
+    <SectionCard chapterLabel="Kapitel 12" title="Verstösse & Konsequenzen">
       <p className="text-gray-700 leading-relaxed">
         Bei Verstössen gegen die Nutzungsrichtlinie greifen abgestufte Massnahmen.
         Zuständig sind die <InfoTerm>TIKT</InfoTerm> und die{" "}

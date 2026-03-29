@@ -2,6 +2,7 @@
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
+import InfoTerm from "@/components/InfoTerm";
 import RoleHint from "@/components/RoleHint";
 
 export default function NutzungITSection() {
@@ -18,7 +19,9 @@ export default function NutzungITSection() {
   return (
     <SectionCard chapterLabel="Kapitel 2" title="Nutzung der IT-Infrastruktur">
       <p className="text-gray-700 leading-relaxed">
-        Die BBW stellt IKT-Systeme zur Verfügung. Private Nutzung ist erlaubt, schulische Zwecke haben Vorrang.
+        Die BBW stellt IKT-Systeme zur Verfügung. Private Nutzung ist erlaubt,
+        schulische Zwecke haben Vorrang. <InfoTerm>Mining</InfoTerm> und{" "}
+        <InfoTerm>Malware</InfoTerm> stellen besondere Gefahren dar.
       </p>
       <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
