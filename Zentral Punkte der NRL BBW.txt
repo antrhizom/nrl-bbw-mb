@@ -1,0 +1,117 @@
+Zentral Punkte der NRL BBW
+
+Diese Nutzungsrichtlinie ist nicht als Vertrag zu verstehen, den die Nutzenden aktiv akzeptieren müssen, sondern sie muss lediglich zur Kenntnis genommen werden. Wird die Richtlinie nicht akzeptiert, hat dies keine Auswirkungen auf ihre Wirksamkeit.
+
+1. Allgemeine Bestimmungen
+Zweck und Grundlagen sind kurz zusammengefasst und abgefragt.
+
+Geltungsbreich ist kurz zusammengefasst und abgefragt.
+
+Auswertung von Randdaten ist kurz zusammengefasst und abgefragt.
+
+2. Nutzung von privaten und kantonalen IT-Arbeitsmitteln
+
+Private Nutzung der IKT-Systeme ist erlaubt, aber BBW-Zwecke haben immer Vorrang.
+
+Berufe definieren Mindestanforderungen an die BYOD.
+
+Das Nutzen von privaten IKT-Systemen darf den Betrieb der BBW IKT-Systeme nicht beeinträchtigen.
+
+Supportmöglichkeiten
+
+3. Datensicherheit
+
+Unterschied Datenschutz und Datensicherheit.
+
+Gefahren und spezielle Vorschicht bei externen Datenablagen. Mit Fallbeispielen darauf hinweisen.
+
+Wenn immer möglich, müssen die Datenablagen der BBW genutzt werden. Das heisst keine externe Wechselspeicher nutzen. Geräte müssen sicherheitsstan
+
+Schutz von Zugangsdaten durch Benutzerkonto, Passwort, Mail-Adresse, MFA
+
+3.3 Schutz von Informationen
+Vorgabe Speicherung an speziellen Orten, welche die Schule zur Verfügung stellt.
+Auf anderen Systemen gilt die Eigenverantwortung. Wenn immer müssten die Datenablagen der BBW genutzt werden.
+
+Ausnahmen: Kurz zusammengefasst und dargestellt
+
+Meldepflicht bei Zugangsmöglichkeit ohne bestehendes Recht
+
+Schutzstufen, wichtiger Punkt!
+Kategorien nennen und Klassifizierung. Beispiele von Daten, die in die Raster konsolidierte Tabelle und Definition von Schutzstufe fallen.
+
+Schulinterne Daten dürfen nicht ohne Weiteres weitegegeben werden
+
+Sorgfaltspflicht kurz zusammengefasst und dargestellt.
+
+Schutz vor Malware kurz zusammengefasst und dargestellt.
+
+Schutz von Kommunikation. E-Mail dürfen nicht mehr an andere Postfächer weitergeleitet werden.
+
+Nur Collaboration Tools der Schule verwenden: z.B.WhatsApp, Dropbox sind nicht erlaubt.
+
+Nachrichten welche vertraulich oder höher qualifiziert sind müssen ausserhalb des EDU-Tenants der BBW verschlüsselt werden. Chat, Kanal oder im Videoanruf.
+
+Vertrauliche und höher klassifizierte Daten dürfen nicht direkt gepostet, sondern verlinkt werden. Empfängerinnenkreis ist bewusst klein gewählt.
+
+
+Netzwerk und Internetnutzung
+Keine unnötige Beeinträchtigung, Sicherheitsmassnahmen nicht umgangen, Webseiten ausserhalb des Grundauftrags, klar eingeschränkt z.T. verboten
+
+Nettiquete-Verpflichtungs-Satz: Alle Beteiligten sind verpflichtet, in digitalen Interaktionen stets respektvoll, sachlich und konstruktiv zu agieren, diskriminierende oder beleidigende Inhalte zu vermeiden, den Datenschutz zu wahren und Spam sowie werbende Inhalte zu unterlassen.
+
+
+Kurz dargestellt: Arbeiten von unterwegs oder zu Hause/Meldepflicht.
+
+4. Datenschutz
+
+Wenn Beachtung fehlt, entstehen Gefahren. Darauf hinweisen.
+
+
+Generell: Art von Prinzipien. Ist zu nennen.
+
+Wichtiger Satz bei 4.2: Die Lernenden sind betreffend datenschutzrechtlichen Themen regelmässig zu sensibilisieren.
+
+Lerntechnologien sind bezüglich Datenschutz zu prüfen.
+Unterschied Lernprofile und Persönlichkeitsprofile
+
+Datensparsamkeit, Zweckbindung als wichtige Prinzipien
+
+Offenlegung von personenbezogenen Statistik dürfen nicht vor der Klasse oder anderen Personen offengelegt werden, ausser in definierten Gremine der Schule.
+
+Daten/Unterrichtsmaterial von Lernenden mit Angaben besonderer Personendaten müssen mindestens vertraulich klassifiziert werdne un haben erhöhte Schutzstufe. Löschung nach Ende Ausbildung. 
+
+Einwilligung können allein von den Lernenden eingeholt werden.
+
+4.3 Lerntechnologien und KI
+Kurz zusammengefasst und hingewiesen
+
+Registration für KI und Lerntechnologie darf nicht erzwungen werden. Wichtig: Anmeldung mit dem Login der Schule bei Schulangeboten sind davon nicht betroffen.
+
+Sonst kurz zusammengefasst.
+
+5. Urheberrecht
+
+Generell und im Unterricht kurz zusammengefasst und dargestellt.
+
+Nussschale: In der Klasse darf ausschnittsweise urheberrechtlich geschützt Werke genutzt werden. Ganz Werke sind nur bei TV- und Radioaufnahmen möglich und auch nur in der eigenen Klasse. Klassenübergreifende und Lehrpersonenübergreifende Teilordner sind nicht erlaubt.
+
+Wichtige Begriffe: Eigengebrauch, eigene Klassen, Lehrmittelgebrauch fremder Werke urheberrechtlich geschützt ist nicht erlaubt, wichtig auch eigene geteilte Zusammenstellungen der Lernenden unter sich ist verboten.
+
+Neukreationen. Ausserhalb der eigene Klassen dürfen Werke von den Lernenden keine urheberrechtlich geschützte Inhalte haben.
+
+KI-Inhalte müssen bei der Veröffentlichung durch die individuellen Autoren überprüfgt werden, ob diese nicht urheberrechtlich geschützte Inhalte hat.
+
+Ganz kurz Massnahmen bei Verstössen, Haftungsausschuss.
+
+Bei rechtlichen Grundlagen darauf hinweisen, dass die Schule den Auftrag hat vom Kanton eine NRL einzuführen, das gemäss ihrer rechtlichen Stellung autonom vollzogen werden muss und sie sich dabei auf die gesetzlichen Grundlagen des Bundes und des Kantons stützen muss.
+
+
+
+
+
+
+
+
+
+
