@@ -10,7 +10,7 @@ export default function Datensicherheit2Section() {
 
   const flipCards = [
     { title: "Offizielle Speicher & Ausnahmen", description: "Schulinterne Daten gehören auf BBW-Speicher. Ausnahmen sind abhängig von berufsgruppenspezifischen oder abteilungsspezifischen Bedürfnissen." },
-    { title: "Meldepflicht", description: "Unbefugte Zugangsmöglichkeiten müssen sofort gemeldet werden." },
+    { title: "Meldepflicht", description: "Wenn Sie feststellen, dass Sie auf Informationen zugreifen können, für die Sie keine Berechtigung haben, melden Sie dies umgehend dem TIKT-Team." },
     { title: "Schutzstufen beachten", description: "Daten werden in drei Schutzstufen eingeteilt: Sachdaten, Personendaten und besondere Personendaten. Details dazu auf der nächsten Seite." },
     { title: "Clean-Desk / Clear-Screen", description: "Bildschirm sperren (Win+L), keine vertraulichen Unterlagen offen liegen lassen." },
   ];

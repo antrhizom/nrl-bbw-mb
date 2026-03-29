@@ -1,10 +1,66 @@
 "use client";
 
+import { useState } from "react";
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
 import InfoTerm from "@/components/InfoTerm";
 import RoleHint from "@/components/RoleHint";
+
+interface AccordionItemProps {
+  color: string;
+  title: string;
+  kategorie: string;
+  klassifizierung: string;
+  schutzstufe: string;
+  beispiele: string;
+  defaultOpen?: boolean;
+}
+
+function AccordionItem({
+  color,
+  title,
+  kategorie,
+  klassifizierung,
+  schutzstufe,
+  beispiele,
+  defaultOpen = false,
+}: AccordionItemProps) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className={`border-l-4 ${color} rounded-r-lg border border-gray-200 overflow-hidden`}>
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
+      >
+        <span className="font-semibold text-gray-900">{title}</span>
+        <span className="text-gray-400 text-lg">{open ? "−" : "+"}</span>
+      </button>
+      {open && (
+        <div className="px-4 pb-4 text-sm text-gray-700 space-y-2 animate-fade-in">
+          <div className="grid grid-cols-3 gap-2">
+            <div>
+              <span className="font-semibold text-gray-600 block text-xs uppercase tracking-wide">Kategorie</span>
+              <span>{kategorie}</span>
+            </div>
+            <div>
+              <span className="font-semibold text-gray-600 block text-xs uppercase tracking-wide">Klassifizierung</span>
+              <span>{klassifizierung}</span>
+            </div>
+            <div>
+              <span className="font-semibold text-gray-600 block text-xs uppercase tracking-wide">Schutzstufe</span>
+              <span>{schutzstufe}</span>
+            </div>
+          </div>
+          <div className="pt-1">
+            <span className="font-semibold text-gray-600 text-xs uppercase tracking-wide">Beispiele: </span>
+            <span>{beispiele}</span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Datensicherheit4Section() {
   const { markSectionComplete } = useMerkblatt();
@@ -12,19 +68,19 @@ export default function Datensicherheit4Section() {
 
   const flipCards = [
     {
-      title: "Sachdaten (öffentlich / intern)",
+      title: "Kategorie der Information",
       description:
-        "Allgemeine schulische Informationen ohne Personenbezug. Beispiele: Stundenpläne, Lehrmittel-Listen, Raumpläne, allgemeine Schulinformationen.",
+        "Sachdaten haben keinen Personenbezug. Personendaten beziehen sich auf bestimmbare Personen. Besondere Personendaten sind besonders schützenswert.",
     },
     {
-      title: "Personendaten (vertraulich)",
+      title: "Klassifizierung",
       description:
-        "Angaben, die sich auf bestimmte Personen beziehen. Beispiele: Name, E-Mail-Adresse, Noten, Adresse, Telefonnummer, Klassenlisten.",
+        "Informationen werden als öffentlich, intern, vertraulich oder streng vertraulich klassifiziert – je nach Sensibilität.",
     },
     {
-      title: "Besondere Personendaten (streng vertraulich)",
+      title: "Schutzstufe",
       description:
-        "Besonders schützenswerte Informationen. Beispiele: Gesundheitsdaten, ärztliche Zeugnisse, Disziplinarmassnahmen, religiöse Überzeugungen, Sozialhilfedaten.",
+        "Die Schutzstufe bestimmt die technischen und organisatorischen Massnahmen: von frei zugänglich bis höchste Sicherheitsanforderungen.",
     },
     {
       title: "Amtsgeheimnis",
@@ -34,47 +90,41 @@ export default function Datensicherheit4Section() {
   ];
 
   return (
-    <SectionCard
-      chapterLabel="Kapitel 5"
-      title="Dokumentenklassifizierung & Schutzstufen"
-    >
+    <SectionCard chapterLabel="Kapitel 6" title="Informationssicherheit">
       <p className="text-gray-700 leading-relaxed">
-        Die korrekte Klassifizierung von Daten ist entscheidend für deren Schutz.
-        Alle schulinternen Daten werden in drei Schutzstufen eingeteilt.
-        Die Einstufung bestimmt, wie Daten gespeichert, weitergegeben und geschützt
-        werden müssen.
+        Die korrekte Klassifizierung von Informationen ist entscheidend für deren Schutz.
+        Dabei sind drei Aspekte zu beachten: die <strong>Kategorie</strong> der Information
+        (Sachdaten, <InfoTerm>Personendaten</InfoTerm>, besondere Personendaten),
+        die <strong>Klassifizierung</strong> (öffentlich bis streng vertraulich) und
+        die <strong>Schutzstufe</strong> (technische und organisatorische Massnahmen).
       </p>
 
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
-        <h4 className="font-semibold text-gray-800 mb-3">
-          Übersicht Schutzstufen
-        </h4>
-        <ul className="space-y-3 text-sm text-gray-700">
-          <li className="flex items-start gap-2">
-            <span className="inline-block w-3 h-3 mt-1 rounded-full bg-green-400 shrink-0" />
-            <span>
-              <strong>Sachdaten</strong> – öffentlich oder intern. Kein
-              Personenbezug. Dürfen innerhalb der Schule frei geteilt werden.
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="inline-block w-3 h-3 mt-1 rounded-full bg-amber-400 shrink-0" />
-            <span>
-              <strong>
-                <InfoTerm>Personendaten</InfoTerm>
-              </strong>{" "}
-              – vertraulich. Personenbezogene Angaben. Zugang nur für berechtigte
-              Personen.
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="inline-block w-3 h-3 mt-1 rounded-full bg-red-400 shrink-0" />
-            <span>
-              <strong>Besondere Personendaten</strong> – streng vertraulich.
-              Besonders schützenswert. Höchste Sicherheitsanforderungen.
-            </span>
-          </li>
-        </ul>
+      <div className="space-y-2 mt-4">
+        <AccordionItem
+          color="border-l-green-500"
+          title="Sachdaten – öffentlich / intern"
+          kategorie="Sachdaten"
+          klassifizierung="Öffentlich oder intern"
+          schutzstufe="Basis"
+          beispiele="Stundenpläne, Lehrmittel-Listen, Raumpläne, allgemeine Schulinformationen"
+          defaultOpen
+        />
+        <AccordionItem
+          color="border-l-amber-500"
+          title="Personendaten – vertraulich"
+          kategorie="Personendaten"
+          klassifizierung="Vertraulich"
+          schutzstufe="Erhöht"
+          beispiele="Name, E-Mail-Adresse, Noten, Adresse, Telefonnummer, Klassenlisten"
+        />
+        <AccordionItem
+          color="border-l-red-500"
+          title="Besondere Personendaten – streng vertraulich"
+          kategorie="Besondere Personendaten"
+          klassifizierung="Streng vertraulich"
+          schutzstufe="Höchste Stufe"
+          beispiele="Gesundheitsdaten, ärztliche Zeugnisse, Disziplinarmassnahmen, religiöse Überzeugungen, Sozialhilfedaten"
+        />
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 mt-6">
@@ -92,36 +142,31 @@ export default function Datensicherheit4Section() {
       </div>
 
       <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
-        <h4 className="font-semibold text-red-800 mb-2">
-          Szenario: Falsche Klassifizierung
-        </h4>
+        <h4 className="font-semibold text-red-800 mb-2">Szenario: Falsche Klassifizierung</h4>
         <p className="text-sm text-red-700">
-          Eine Lehrperson speichert eine Notenliste (Personendaten) auf einem
-          privaten USB-Stick. Der Stick geht verloren. Da die Daten nicht auf
-          einem offiziellen BBW-Speicher lagen, ist der Schutz nicht
-          gewährleistet – ein Verstoss gegen die NRL.
+          Eine Lehrperson speichert eine Notenliste (Personendaten) auf einem privaten USB-Stick.
+          Der Stick geht verloren. Da die Daten nicht auf einem offiziellen BBW-Speicher lagen,
+          ist der Schutz nicht gewährleistet – ein Verstoss gegen die NRL.
         </p>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-2">
-        <h4 className="font-semibold text-amber-800 mb-2">
-          Szenario: Besondere Personendaten
-        </h4>
+        <h4 className="font-semibold text-amber-800 mb-2">Szenario: Besondere Personendaten</h4>
         <p className="text-sm text-amber-700">
-          Ein ärztliches Zeugnis einer lernenden Person wird per E-Mail an
-          mehrere Personen weitergeleitet. Besondere Personendaten dürfen nur
-          an den engsten berechtigten Personenkreis weitergegeben werden – in
-          diesem Fall ein klarer Verstoss.
+          Ein ärztliches Zeugnis einer lernenden Person wird per E-Mail an mehrere Personen
+          weitergeleitet. Besondere Personendaten dürfen nur an den engsten berechtigten
+          Personenkreis weitergegeben werden – in diesem Fall ein klarer Verstoss.
         </p>
       </div>
 
       <RoleHint role="lehrpersonen">
-        Die korrekte Klassifizierung von Daten liegt in Ihrer Verantwortung.
-        Prüfen Sie bei jedem Dokument, welche Schutzstufe gilt.
+        Beachten Sie, dass Personendaten und besondere Personendaten auf dem LIS gespeichert
+        sein müssen oder an die Verwaltung für die Aufbewahrung weitergereicht werden.
+        Die korrekte Klassifizierung liegt in Ihrer Verantwortung.
       </RoleHint>
       <RoleHint role="mitarbeitende">
-        Achten Sie besonders auf die korrekte Einstufung von Personendaten in
-        Ihrem Arbeitsbereich. Im Zweifel gilt die höhere Schutzstufe.
+        Achten Sie besonders auf die korrekte Einstufung von Personendaten in Ihrem
+        Arbeitsbereich. Im Zweifel gilt die höhere Schutzstufe.
       </RoleHint>
     </SectionCard>
   );

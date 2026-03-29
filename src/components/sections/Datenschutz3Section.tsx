@@ -23,9 +23,6 @@ export default function Datenschutz3Section() {
       <RoleHint role="lehrpersonen">
         Die Anmeldung bei KI-Tools darf nicht erzwungen werden – auch nicht indirekt durch Benotung.
       </RoleHint>
-      <RoleHint role="lernende">
-        Sie müssen sich nicht bei KI-Tools registrieren. Bei regulären Schulangeboten mit Schul-Login gilt diese Regel nicht.
-      </RoleHint>
       <RoleHint role="mitarbeitende">
         Geben Sie keine Schuldaten in KI-Tools ein – auch nicht in anonymisierter Form, sofern ein Rückschluss auf Personen möglich wäre.
       </RoleHint>

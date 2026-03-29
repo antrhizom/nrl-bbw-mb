@@ -20,7 +20,8 @@ export default function NutzungITSection() {
     <SectionCard chapterLabel="Kapitel 2" title="Nutzung der IT-Infrastruktur">
       <p className="text-gray-700 leading-relaxed">
         Die BBW stellt IKT-Systeme zur Verfügung. Private Nutzung ist erlaubt,
-        schulische Zwecke haben Vorrang. <InfoTerm>Mining</InfoTerm> und{" "}
+        schulische Zwecke haben Vorrang. <InfoTerm>BYOD</InfoTerm>-Geräte (private Geräte für den Unterricht) müssen
+        Mindestanforderungen erfüllen. <InfoTerm>Mining</InfoTerm> und{" "}
         <InfoTerm>Malware</InfoTerm> stellen besondere Gefahren dar.
       </p>
       <div className="grid gap-4 sm:grid-cols-2">

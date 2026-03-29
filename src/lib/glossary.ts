@@ -40,4 +40,6 @@ export const GLOSSARY: Record<string, string> = {
     "Kryptowährungs-Mining – rechenintensive Erzeugung digitaler Währungen (z.B. Bitcoin). Belastet Geräte und Netzwerk stark und ist an der BBW verboten.",
   Malware:
     "Schadsoftware wie Viren, Trojaner oder Ransomware, die Daten beschädigen, stehlen oder Systeme lahmlegen kann.",
+  BYOD:
+    "Bring Your Own Device – private Geräte (Laptop, Tablet, Smartphone), die für Unterrichtszwecke in die Schule mitgebracht werden.",
 };

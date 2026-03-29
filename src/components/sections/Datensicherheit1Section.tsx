@@ -11,7 +11,7 @@ export default function Datensicherheit1Section() {
   const flipCards = [
     { title: "Datensicherheit vs. Datenschutz", description: "Datensicherheit schützt Daten vor Verlust und Zugriff. Datenschutz regelt den Umgang mit Personendaten." },
     { title: "Gefahren externer Ablagen", description: "USB-Sticks, private Clouds und fremde WLANs bergen Risiken wie unbefugten Zugriff." },
-    { title: "Nur BBW-Speicher", description: "Schulinterne Daten nur auf: Schulserver, Nextcloud, OneDrive, Teams, SharePoint, OpenOlat." },
+    { title: "In der Regel BBW-Speicher", description: "Schulinterne Daten sind in der Regel auf offiziellen BBW-Speichern abzulegen: Schulserver, Nextcloud, OneDrive, Teams, SharePoint, OpenOlat." },
     { title: "Zugangsdaten schützen", description: "Passwörter geheim halten, Konten nie teilen. MFA ist bei Microsoft-Diensten der BBW bereits Pflicht." },
   ];
 
