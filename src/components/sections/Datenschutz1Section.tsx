@@ -1,53 +1,43 @@
 "use client";
+
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
 import InfoTerm from "@/components/InfoTerm";
-import GlossaryCards from "@/components/GlossaryCards";
-import { GLOSSARY } from "@/lib/glossary";
+import RoleHint from "@/components/RoleHint";
 
 export default function Datenschutz1Section() {
-  const { markComplete } = useMerkblatt();
+  const { markSectionComplete } = useMerkblatt();
   const sectionId = "datenschutz-1";
 
   const flipCards = [
     {
       title: "Gefahren bei Nichtbeachtung",
       description:
-        "Ohne Beachtung des Datenschutzes entstehen Gefahren wie Identitätsdiebstahl, Diskriminierung und Vertrauensverlust. Die Einhaltung der Datenschutzprinzipien ist daher zwingend.",
+        "Identitätsdiebstahl, Diskriminierung und Vertrauensverlust sind mögliche Folgen.",
     },
     {
       title: "Datenschutzprinzipien",
       description:
-        "Die wichtigsten Datenschutzprinzipien sind: Datensparsamkeit (nur nötige Daten erheben), Zweckbindung (Daten nur für den erhobenen Zweck nutzen), Transparenz und Verhältnismässigkeit.",
+        "Datensparsamkeit, Zweckbindung, Transparenz und Verhältnismässigkeit.",
     },
     {
-      title: "Sensibilisierung der Lernenden",
+      title: "Sensibilisierung",
       description:
-        "Die Lernenden sind betreffend datenschutzrechtlichen Themen regelmässig zu sensibilisieren.",
+        "Lernende sind regelmässig zu datenschutzrechtlichen Themen zu sensibilisieren.",
     },
-  ];
-
-  const glossaryTerms = [
-    "Datenschutz",
-    "Datensparsamkeit",
-    "Zweckbindung",
-    "Transparenz",
-    "Verhältnismässigkeit",
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 4.1" title="Datenschutz – Grundlagen & Prinzipien">
+    <SectionCard chapterLabel="Kapitel 6" title="Datenschutz">
       <p className="text-gray-700 leading-relaxed">
-        <InfoTerm>Datenschutz</InfoTerm> schützt
-        Personen vor missbräuchlicher Datenverwendung. Zentrale Prinzipien sind{" "}
+        <InfoTerm>Datenschutz</InfoTerm> basiert auf den Prinzipien{" "}
         <InfoTerm>Datensparsamkeit</InfoTerm>,{" "}
-        <InfoTerm>Zweckbindung</InfoTerm>,{" "}
-        <InfoTerm>Transparenz</InfoTerm> und{" "}
+        <InfoTerm>Zweckbindung</InfoTerm>, <InfoTerm>Transparenz</InfoTerm> und{" "}
         <InfoTerm>Verhältnismässigkeit</InfoTerm>.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
           <FlipCard
             key={index}
@@ -56,17 +46,15 @@ export default function Datenschutz1Section() {
             index={index}
             total={flipCards.length}
             sectionId={sectionId}
-            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+            onAllFlipped={() => markSectionComplete(sectionId)}
           />
         ))}
       </div>
 
-      <GlossaryCards
-        terms={glossaryTerms}
-        glossary={GLOSSARY}
-        sectionId={sectionId}
-        onAllLearned={() => markComplete(sectionId, "glossary")}
-      />
+      <RoleHint role="lehrpersonen">
+        Sie sind dafür verantwortlich, Lernende regelmässig zu
+        datenschutzrechtlichen Themen zu sensibilisieren.
+      </RoleHint>
     </SectionCard>
   );
 }

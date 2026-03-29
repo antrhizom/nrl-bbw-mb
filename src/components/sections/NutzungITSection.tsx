@@ -1,48 +1,45 @@
 "use client";
-import { useEffect } from "react";
+
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
+import RoleHint from "@/components/RoleHint";
 
 export default function NutzungITSection() {
-  const { markComplete } = useMerkblatt();
+  const { markSectionComplete } = useMerkblatt();
   const sectionId = "nutzung-it";
-
-  useEffect(() => {
-    markComplete(sectionId, "glossary");
-  }, []);
 
   const flipCards = [
     {
-      title: "Private Nutzung erlaubt",
+      title: "Private Nutzung",
       description:
-        "Private Nutzung der IKT-Systeme ist erlaubt, aber BBW-Zwecke haben immer Vorrang. Ressourcenintensive Aktivitäten wie Kryptowährungs-Mining und kommerzielle Nutzung sind verboten.",
+        "Erlaubt, aber schulische Zwecke haben Vorrang. Mining und kommerzielle Nutzung sind verboten.",
     },
     {
-      title: "BYOD-Mindestanforderungen",
+      title: "BYOD-Anforderungen",
       description:
-        "Die Berufsfelder definieren Mindestanforderungen an die BYOD-Geräte. Grundvoraussetzungen sind Passwort-/PIN-Schutz und aktuelle Software-Updates.",
+        "Passwort-/PIN-Schutz und aktuelle Software-Updates sind Pflicht.",
     },
     {
       title: "Keine Beeinträchtigung",
       description:
-        "Das Nutzen von privaten IKT-Systemen darf den Betrieb der BBW-IKT-Systeme nicht beeinträchtigen.",
+        "Private Geräte dürfen den Betrieb der Schul-IT nicht stören.",
     },
     {
-      title: "Support",
+      title: "Support & E-Mail",
       description:
-        "Die Schule bietet technischen Support für schulische Geräte. Für private Geräte (BYOD) ist der Support eingeschränkt. E-Mail und Kalender können über den Browser genutzt werden – eine Synchronisation auf dem Gerät ist nicht erforderlich.",
+        "Support für private Geräte ist eingeschränkt. E-Mail/Kalender laufen über den Browser – keine Synchronisation nötig.",
     },
   ];
 
   return (
-    <SectionCard chapterLabel="Kapitel 2" title="Nutzung IT-Arbeitsmittel">
+    <SectionCard chapterLabel="Kapitel 2" title="Nutzung der IT-Infrastruktur">
       <p className="text-gray-700 leading-relaxed">
-        Die BBW stellt verschiedene IKT-Systeme zur Verfügung. Private Nutzung ist erlaubt,
-        solange schulische Zwecke Vorrang haben und der Betrieb nicht beeinträchtigt wird.
+        Die BBW stellt IKT-Systeme zur Verfügung. Private Nutzung ist erlaubt,
+        schulische Zwecke haben Vorrang.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
           <FlipCard
             key={index}
@@ -51,10 +48,15 @@ export default function NutzungITSection() {
             index={index}
             total={flipCards.length}
             sectionId={sectionId}
-            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+            onAllFlipped={() => markSectionComplete(sectionId)}
           />
         ))}
       </div>
+
+      <RoleHint role="lernende">
+        Dein BYOD-Gerät muss die Mindestanforderungen deines Berufsfelds
+        erfüllen.
+      </RoleHint>
     </SectionCard>
   );
 }

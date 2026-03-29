@@ -1,43 +1,42 @@
 "use client";
-import { useEffect } from "react";
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
+import RoleHint from "@/components/RoleHint";
 
 export default function Urheberrecht2Section() {
-  const { markComplete } = useMerkblatt();
+  const { markSectionComplete } = useMerkblatt();
   const sectionId = "urheberrecht-2";
 
   const flipCards = [
     {
-      title: "Eigengebrauch & eigene Klassen",
+      title: "Eigengebrauch & eigene Klasse",
       description:
-        "Urheberrechtlich geschützte Werke dürfen nur im Eigengebrauch und in der eigenen Klasse verwendet werden. Der Lehrmittelgebrauch fremder Werke, die urheberrechtlich geschützt sind, ist darüber hinaus nicht erlaubt.",
+        "Geschützte Werke nur im Eigengebrauch und in der eigenen Klasse verwenden.",
     },
     {
       title: "Neukreationen der Lernenden",
       description:
-        "Ausserhalb der eigenen Klassen dürfen Werke von Lernenden keine urheberrechtlich geschützten Inhalte enthalten.",
+        "Werke für den Einsatz ausserhalb der Klasse dürfen keine geschützten Inhalte Dritter enthalten.",
     },
     {
-      title: "KI-Inhalte & Urheberrecht",
+      title: "KI & Verantwortung",
       description:
-        "KI-Inhalte müssen bei der Veröffentlichung durch die individuellen Autoren überprüft werden, ob sie urheberrechtlich geschützte Inhalte enthalten. Wer KI-generierte Inhalte veröffentlicht, trägt die volle Verantwortung.",
+        "Wer KI-Inhalte veröffentlicht, muss sie auf Urheberrechtsverletzungen prüfen und trägt die volle Verantwortung.",
     },
   ];
 
-  useEffect(() => {
-    markComplete(sectionId, "glossary");
-  }, [markComplete]);
-
   return (
-    <SectionCard chapterLabel="Kapitel 5.2" title="Urheberrecht – KI & Neukreationen">
-      <p className="text-gray-700 mb-6">
-        Bei der Nutzung von KI-generierten Inhalten und Neukreationen von Lernenden gelten besondere
-        urheberrechtliche Regeln.
+    <SectionCard chapterLabel="Kapitel 5.2" title="Urheberrecht – Neukreationen & KI">
+      <p className="text-gray-700 leading-relaxed">
+        Bei Neukreationen und KI-generierten Inhalten gelten besondere Regeln.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <RoleHint role="lernende">
+        Wenn du KI-generierte Inhalte oder fremde Werke in deine Projekte einbaust, bist du für Rechtsverletzungen verantwortlich.
+      </RoleHint>
+
+      <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
           <FlipCard
             key={index}
@@ -46,7 +45,7 @@ export default function Urheberrecht2Section() {
             index={index}
             total={flipCards.length}
             sectionId={sectionId}
-            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+            onAllFlipped={() => markSectionComplete(sectionId)}
           />
         ))}
       </div>

@@ -3,42 +3,39 @@ import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
 import InfoTerm from "@/components/InfoTerm";
-import GlossaryCards from "@/components/GlossaryCards";
-import { GLOSSARY } from "@/lib/glossary";
+import RoleHint from "@/components/RoleHint";
 
 export default function Datenschutz2Section() {
-  const { markComplete } = useMerkblatt();
+  const { markSectionComplete } = useMerkblatt();
   const sectionId = "datenschutz-2";
 
   const flipCards = [
     {
       title: "Lerntechnologien prüfen",
       description:
-        "Eingesetzte Lerntechnologien müssen bezüglich Datenschutz geprüft sein.",
+        "Eingesetzte Lerntechnologien müssen datenschutzkonform sein.",
     },
     {
       title: "Lernprofile vs. Persönlichkeitsprofile",
       description:
-        "Lernprofile (Lernfortschritt, Aufgabenresultate) sind erlaubt. Sie dürfen aber nicht mit persönlichen Merkmalen zu umfassenden Persönlichkeitsprofilen verknüpft werden.",
+        "Lernprofile sind erlaubt, dürfen aber nicht zu Persönlichkeitsprofilen erweitert werden.",
     },
     {
-      title: "Keine Offenlegung von Statistiken",
+      title: "Statistiken nicht offenlegen",
       description:
-        "Personenbezogene Statistiken dürfen nicht vor der Klasse oder anderen Personen offengelegt werden, ausser in definierten Gremien der Schule.",
+        "Personenbezogene Ergebnisse nicht vor der Klasse zeigen.",
     },
     {
-      title: "Besondere Personendaten schützen",
+      title: "Besondere Personendaten",
       description:
-        "Daten und Unterrichtsmaterial von Lernenden mit Angaben besonderer Personendaten müssen mindestens vertraulich klassifiziert werden und haben eine erhöhte Schutzstufe. Löschung nach Ende der Ausbildung.",
+        "Mindestens vertraulich einstufen, nach Ausbildungsende löschen.",
     },
     {
-      title: "Einwilligung der Lernenden",
+      title: "Einwilligung",
       description:
-        "Einwilligungen im Datenschutzbereich können allein von den Lernenden selbst eingeholt werden.",
+        "Datenschutz-Einwilligungen können nur von den Lernenden selbst gegeben werden.",
     },
   ];
-
-  const glossaryTerms = ["Lernprofil", "Persönlichkeitsprofil", "Personendaten"];
 
   return (
     <SectionCard chapterLabel="Kapitel 4.2" title="Datenschutz – Im Unterricht">
@@ -51,7 +48,14 @@ export default function Datenschutz2Section() {
         Lernenden besonders sorgfältig.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <RoleHint role="lehrpersonen">
+        Zeigen Sie keine individuellen Ergebnisse oder Statistiken vor der Klasse – auch nicht zur Motivation.
+      </RoleHint>
+      <RoleHint role="lernende">
+        Deine Einwilligung zu Datenschutzfragen kann nur von dir selbst gegeben werden.
+      </RoleHint>
+
+      <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
           <FlipCard
             key={index}
@@ -60,17 +64,10 @@ export default function Datenschutz2Section() {
             index={index}
             total={flipCards.length}
             sectionId={sectionId}
-            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+            onAllFlipped={() => markSectionComplete(sectionId)}
           />
         ))}
       </div>
-
-      <GlossaryCards
-        terms={glossaryTerms}
-        glossary={GLOSSARY}
-        sectionId={sectionId}
-        onAllLearned={() => markComplete(sectionId, "glossary")}
-      />
     </SectionCard>
   );
 }

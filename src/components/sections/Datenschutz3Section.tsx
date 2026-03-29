@@ -1,48 +1,50 @@
 "use client";
-import { useEffect } from "react";
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
+import RoleHint from "@/components/RoleHint";
 
 export default function Datenschutz3Section() {
-  const { markComplete } = useMerkblatt();
+  const { markSectionComplete } = useMerkblatt();
   const sectionId = "datenschutz-3";
 
   const flipCards = [
     {
-      title: "Keine persönlichen Daten in KI-Tools",
+      title: "Keine persönlichen Daten in KI",
       description:
-        "Keine persönlichen Daten in generative KI-Tools (z.B. ChatGPT) eingeben. Vertrauliche oder geheime Informationen dürfen nicht mit KI verwendet werden. Öffentliche Schulinformationen sind erlaubt, aber nicht in Kombination mit internen Kennungen.",
+        "Vertrauliche oder geheime Informationen dürfen nicht in KI-Tools eingegeben werden.",
     },
     {
       title: "Freiwillige Anmeldung",
       description:
-        "Die Registration für KI und Lerntechnologien darf nicht erzwungen werden. Wichtig: Anmeldungen mit dem Login der Schule bei Schulangeboten sind davon nicht betroffen.",
+        "Anmeldung bei KI-Tools ist freiwillig. Schul-Logins bei Schulangeboten sind ausgenommen.",
     },
     {
       title: "KI-Inhalte prüfen",
       description:
-        "KI-generierte Inhalte müssen vor der Verwendung auf Korrektheit und mögliche Urheberrechtsverletzungen geprüft werden. Die Verantwortung liegt bei der Person, die den Inhalt nutzt oder veröffentlicht.",
+        "KI-generierte Inhalte auf Korrektheit und Urheberrechtsverletzungen prüfen.",
     },
     {
-      title: "Keine Aufnahmen ohne Einwilligung",
+      title: "Aufnahmen nur mit Einwilligung",
       description:
-        "Keine Veröffentlichung von Aufnahmen (Bild, Ton, Video) ohne ausdrückliche Einwilligung der betroffenen Personen. Die Kamera darf in Videokonferenzen ausgeschaltet werden.",
+        "Keine Veröffentlichung von Bild, Ton oder Video ohne Einwilligung. Kamera darf aus sein.",
     },
   ];
 
-  useEffect(() => {
-    markComplete(sectionId, "glossary");
-  }, [markComplete]);
-
   return (
-    <SectionCard chapterLabel="Kapitel 4.3" title="KI & Lerntechnologien">
-      <p className="text-gray-700 mb-6">
-        Generative KI-Tools und Lerntechnologien bieten grosse Chancen, erfordern aber einen
-        verantwortungsvollen Umgang mit Daten und Inhalten.
+    <SectionCard chapterLabel="Kapitel 4.3" title="Datenschutz – KI & Lerntechnologien">
+      <p className="text-gray-700 leading-relaxed">
+        Generative KI-Tools und Lerntechnologien erfordern verantwortungsvollen Umgang mit Daten.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <RoleHint role="lehrpersonen">
+        Die Anmeldung bei KI-Tools darf nicht erzwungen werden – auch nicht indirekt durch Benotung.
+      </RoleHint>
+      <RoleHint role="lernende">
+        Du musst dich nicht bei KI-Tools registrieren. Bei Schulangeboten mit Schul-Login gilt diese Regel nicht.
+      </RoleHint>
+
+      <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
           <FlipCard
             key={index}
@@ -51,7 +53,7 @@ export default function Datenschutz3Section() {
             index={index}
             total={flipCards.length}
             sectionId={sectionId}
-            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+            onAllFlipped={() => markSectionComplete(sectionId)}
           />
         ))}
       </div>

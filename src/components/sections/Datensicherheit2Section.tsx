@@ -1,55 +1,53 @@
 "use client";
+
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
 import InfoTerm from "@/components/InfoTerm";
-import GlossaryCards from "@/components/GlossaryCards";
-import { GLOSSARY } from "@/lib/glossary";
 
 export default function Datensicherheit2Section() {
-  const { markComplete } = useMerkblatt();
+  const { markSectionComplete } = useMerkblatt();
   const sectionId = "datensicherheit-2";
 
   const flipCards = [
     {
-      title: "Speicherung an offiziellen Orten",
+      title: "Offizielle Speicherorte",
       description:
-        "Schulinterne Informationen müssen auf den von der Schule bereitgestellten Speicherdiensten abgelegt werden. Auf anderen Systemen gilt die Eigenverantwortung.",
+        "Schulinformationen gehören auf die Speicherdienste der BBW. Eigenverantwortung auf anderen Systemen.",
     },
     {
-      title: "Ausnahmen bei der Speicherung",
+      title: "Ausnahmen möglich",
       description:
-        "Es gibt definierte Ausnahmen, bei denen Daten auch ausserhalb der BBW-Speicher abgelegt werden dürfen – diese sind in der NRL geregelt und setzen Eigenverantwortung voraus.",
+        "Bestimmte Ausnahmen für externe Speicherung sind in der NRL geregelt.",
     },
     {
       title: "Meldepflicht",
       description:
-        "Wer eine Zugangsmöglichkeit ohne bestehendes Recht entdeckt, muss dies umgehend melden.",
+        "Unbefugte Zugangsmöglichkeiten müssen sofort gemeldet werden.",
     },
     {
-      title: "Schutzstufen & Klassifizierung",
+      title: "Drei Schutzstufen",
       description:
-        "Daten werden in drei Schutzstufen eingeteilt: Sachdaten, Personendaten und besondere Personendaten. Schulinterne Daten unterliegen dem Amtsgeheimnis und dürfen nicht ohne Weiteres weitergegeben werden.",
+        "Sachdaten, Personendaten, besondere Personendaten – schulinterne Daten unterliegen dem Amtsgeheimnis.",
     },
     {
-      title: "Sorgfaltspflicht & Clean-Desk",
+      title: "Clean-Desk / Clear-Screen",
       description:
-        "Behandle Schulgeräte und -daten sorgfältig. Sperre den Bildschirm beim Verlassen des Arbeitsplatzes (Win+L) und lasse keine vertraulichen Unterlagen offen liegen (Clean-Desk / Clear-Screen).",
+        "Bildschirm sperren (Win+L), keine vertraulichen Unterlagen offen liegen lassen.",
     },
   ];
 
-  const glossaryTerms = ["Personendaten"];
-
   return (
-    <SectionCard chapterLabel="Kapitel 3.2" title="Schutz von Informationen">
+    <SectionCard
+      chapterLabel="Kapitel 4"
+      title="Datensicherheit – Speicherung & Schutz"
+    >
       <p className="text-gray-700 leading-relaxed">
-        Schulinterne Daten müssen geschützt und korrekt klassifiziert werden.
-        Besonders{" "}
-        <InfoTerm>Personendaten</InfoTerm>{" "}
-        unterliegen strengen Regeln zur Speicherung und Weitergabe.
+        Der Umgang mit <InfoTerm>Personendaten</InfoTerm> erfordert besondere
+        Sorgfalt bei der Speicherung und beim Schutz.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
           <FlipCard
             key={index}
@@ -58,17 +56,10 @@ export default function Datensicherheit2Section() {
             index={index}
             total={flipCards.length}
             sectionId={sectionId}
-            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+            onAllFlipped={() => markSectionComplete(sectionId)}
           />
         ))}
       </div>
-
-      <GlossaryCards
-        terms={glossaryTerms}
-        glossary={GLOSSARY}
-        sectionId={sectionId}
-        onAllLearned={() => markComplete(sectionId, "glossary")}
-      />
     </SectionCard>
   );
 }

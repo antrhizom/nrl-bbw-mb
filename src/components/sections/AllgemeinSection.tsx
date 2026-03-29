@@ -1,44 +1,40 @@
 "use client";
+
 import { useMerkblatt } from "@/context/MerkblattContext";
 import SectionCard from "@/components/SectionCard";
 import FlipCard from "@/components/FlipCard";
 import InfoTerm from "@/components/InfoTerm";
-import GlossaryCards from "@/components/GlossaryCards";
-import { GLOSSARY } from "@/lib/glossary";
 
 export default function AllgemeinSection() {
-  const { markComplete } = useMerkblatt();
+  const { markSectionComplete } = useMerkblatt();
   const sectionId = "allgemein";
 
   const flipCards = [
     {
       title: "Zweck der NRL",
       description:
-        "Die NRL regelt den sicheren und verantwortungsvollen Umgang mit den IKT-Systemen der BBW und stützt sich auf kantonale und eidgenössische Rechtsgrundlagen.",
+        "Regelt den sicheren Umgang mit IKT-Systemen, gestützt auf kantonale und eidgenössische Rechtsgrundlagen.",
     },
     {
       title: "Geltungsbereich",
       description:
-        "Die NRL gilt für alle Nutzenden der BBW-IKT-Systeme – Lernende, Lehrpersonen, Schulleitung, Verwaltung und Gäste.",
+        "Gilt für alle: Lernende, Lehrpersonen, Schulleitung, Verwaltung und Gäste.",
     },
     {
       title: "Auswertung von Logdaten",
       description:
-        "Logdaten (z.B. Firewall, Server) werden gesammelt und regelmässig in anonymisierter Form ausgewertet. Bei konkretem Verdacht auf Missbrauch können personenbezogene Auswertungen erfolgen.",
+        "Logdaten werden anonymisiert ausgewertet. Bei Missbrauchsverdacht sind personenbezogene Auswertungen möglich.",
     },
   ];
 
-  const glossaryTerms = ["IKT-Systeme", "Logdaten"];
-
   return (
-    <SectionCard chapterLabel="Kapitel 1" title="Allgemeine Bestimmungen">
+    <SectionCard chapterLabel="Kapitel 1" title="Allgemeines">
       <p className="text-gray-700 leading-relaxed">
-        Die Nutzungsrichtlinie IKT (NRL) regelt den Umgang mit den{" "}
-        <InfoTerm>IKT-Systemen</InfoTerm> der BBW.{" "}
-        <InfoTerm>Logdaten</InfoTerm> werden regelmässig ausgewertet.
+        Die NRL regelt den Umgang mit den{" "}
+        <InfoTerm>IKT-Systemen</InfoTerm> der BBW.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {flipCards.map((card, index) => (
           <FlipCard
             key={index}
@@ -47,17 +43,10 @@ export default function AllgemeinSection() {
             index={index}
             total={flipCards.length}
             sectionId={sectionId}
-            onAllFlipped={() => markComplete(sectionId, "flipcards")}
+            onAllFlipped={() => markSectionComplete(sectionId)}
           />
         ))}
       </div>
-
-      <GlossaryCards
-        terms={glossaryTerms}
-        glossary={GLOSSARY}
-        sectionId={sectionId}
-        onAllLearned={() => markComplete(sectionId, "glossary")}
-      />
     </SectionCard>
   );
 }
